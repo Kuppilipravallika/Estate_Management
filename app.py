@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
 # MongoDB config
-app.config["MONGO_URI"] = "mongodb://localhost:27017/swift_estates"
+app.config["MONGO_URI"] =os.getenv("MONGO_URI") 
 
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
